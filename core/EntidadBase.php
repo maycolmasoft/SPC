@@ -744,17 +744,6 @@ class EntidadBase{
     
     
     
-    public function  InsertaEntidades($nombre_entidades){
-    	
-    	$entidades = New EntidadesModel();
-    	
-    	$funcion = "ins_entidades_liventy";
-    	$parametros = "'$nombre_entidades'";
-    	$entidades->setFuncion($funcion);
-    	$entidades->setParametros($parametros);
-    	$resultadoT=$entidades->Insert();
-    }
-    
     
     
     
