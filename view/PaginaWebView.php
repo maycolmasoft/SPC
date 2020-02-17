@@ -18,15 +18,34 @@
     <link href="view/PAGINA_WEB/css/prettyPhoto.css" rel="stylesheet">
     <link href="view/PAGINA_WEB/css/main.css" rel="stylesheet">
     <link href="view/PAGINA_WEB/css/styles.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
+     
+       <?php include("view/modulos/links_css.php"); ?>
+    
+    
+    
+    
+    <style>
+     .back-to-top {
+      position: fixed;
+      display: none;
+      display: inline-block;
+       line-height: 1;
+      right: 0px;
+      bottom: 0px;
+      transition: background 0.5s;
+      z-index: 11;
+     }
+    
+    }
+    </style>
+       
     <link rel="shortcut icon" href="view/PAGINA_WEB/images/favicon.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="view/PAGINA_WEB/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="view/PAGINA_WEB/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="view/PAGINA_WEB/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="view/PAGINA_WEB/images/ico/apple-touch-icon-57-precomposed.png">
+    
+    
 </head><!--/head-->
 
 <body id="home" class="homepage">
@@ -46,14 +65,14 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">Inicio</a></li>
-                        <li class="scroll"><a href="#features">Our Features</a></li>
-                        <li class="scroll"><a href="#services">Service</a></li>
-                        <li class="scroll"><a href="#portfolio">Portfolio</a></li>
-                        <li class="scroll"><a href="#about">About Us</a></li>
-                        <li class="scroll"><a href="#meet-team">Team</a></li>
-                        <li class="scroll"><a href="#pricing">Plans</a></li>
-                        <li class="scroll"><a href="#get-in-touch">Contact</a></li>                        
+                        <li class="scroll active"><a href="#home"><b>Inicio</b></a></li>
+                        <li class="scroll"><a href="#features"><b>Our Features</b></a></li>
+                        <li class="scroll"><a href="#services"><b>Service</b></a></li>
+                        <li class="scroll"><a href="#portfolio"><b>Portfolio</b></a></li>
+                        <li class="scroll"><a href="#about"><b>About Us</b></a></li>
+                        <li class="scroll"><a href="#meet-team"><b>Team</b></a></li>
+                        <li class="scroll"><a href="#pricing"><b>Plans</b></a></li>
+                        <li class="scroll"><a href="#get-in-touch"><b>Contact</b></a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -712,6 +731,13 @@
         </div>
     </section><!--/#animated-number-->
 
+
+
+
+
+
+
+
     <section id="pricing">
         <div class="container">
             <div class="section-header">
@@ -832,6 +858,11 @@
         </div>
     </section><!--/#pricing-->
 
+
+
+
+
+
     <section id="testimonial">
         <div class="container">
             <div class="row">
@@ -870,6 +901,12 @@
             </div>
         </div>
     </section><!--/#testimonial-->
+
+
+
+
+
+
 
     <section id="get-in-touch">
         <div class="container">
@@ -919,6 +956,19 @@
         </div>
     </section><!--/#bottom-->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer id="footer">
         <div class="container">
             <div class="row">
@@ -940,6 +990,141 @@
         </div>
     </footer><!--/#footer-->
 
+
+    <div class="back-to-top col-lg-3 col-md-4 col-xs-10" >
+              <!-- DIRECT CHAT -->
+              <div class="box box-warning direct-chat direct-chat-warning collapsed-box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Chat en Linea</h3>
+                  <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">1</span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts"
+                            data-widget="chat-pane-toggle">
+                      <i class="fa fa-comments"></i></button>
+                    <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button> -->
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="display: none;">
+                  <!-- Conversations are loaded here -->
+                  <div class="direct-chat-messages">
+                    <!-- Message. Default to the left -->
+                    <div class="direct-chat-msg">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                      <!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Is this template really for free? That's unbelievable!
+                      </div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+                    <!-- Message to the right -->
+                    <div class="direct-chat-msg right">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                      <!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        You better believe it!
+                      </div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+                    <!-- Message. Default to the left -->
+                    <div class="direct-chat-msg">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                        <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                      <!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Working with AdminLTE on a great new app! Wanna join?
+                      </div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+                    <!-- Message to the right -->
+                    <div class="direct-chat-msg right">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                        <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                      <!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        I would love to.
+                      </div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+                  </div>
+                  <!--/.direct-chat-messages-->
+
+                  <!-- Contacts are loaded here -->
+                  <div class="direct-chat-contacts">
+                    <ul class="contacts-list">
+                      <li>
+                        <a href="#">
+                          <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Image">
+
+                          <div class="contacts-list-info">
+                                <span class="contacts-list-name">
+                                  Count Dracula
+                                  <small class="contacts-list-date pull-right">2/28/2015</small>
+                                </span>
+                            <span class="contacts-list-msg">How have you been? I was...</span>
+                          </div>
+                          <!-- /.contacts-list-info -->
+                        </a>
+                      </li>
+                   
+                    </ul>
+                    <!-- /.contatcts-list -->
+                  </div>
+                  <!-- /.direct-chat-pane -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer" style="display: none;">
+                  <form action="#" method="post">
+                    <div class="input-group">
+                      <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                      <span class="input-group-btn">
+                            <button type="button" class="btn btn-warning btn-flat">Enviar</button>
+                          </span>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.box-footer-->
+              </div>
+              <!--/.direct-chat -->
+            </div>
+            
+
+    
+     <?php include("view/modulos/links_js.php"); ?> 
+    
+    
+   
+    
+    
     <script src="view/PAGINA_WEB/js/jquery.js"></script>
     <script src="view/PAGINA_WEB/js/bootstrap.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -951,5 +1136,12 @@
     <script src="view/PAGINA_WEB/js/jquery.inview.min.js"></script>
     <script src="view/PAGINA_WEB/js/wow.min.js"></script>
     <script src="view/PAGINA_WEB/js/main.js"></script>
+    
+    
+    
+    
+    
+    
+    
 </body>
 </html>
