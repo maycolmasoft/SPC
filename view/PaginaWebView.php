@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+   
     <title>SPC</title>
 	<!-- CSS -->
 	
@@ -973,7 +972,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 Your Company.
+                    &copy; 2020 SPC.
                 </div>
                 <div class="col-sm-6">
                     <ul class="social-icons">
@@ -988,7 +987,10 @@
                 </div>
             </div>
         </div>
-    </footer><!--/#footer-->
+    </footer>
+    
+    
+    
 
 
     <div class="back-to-top col-lg-3 col-md-4 col-xs-10" >
@@ -1009,121 +1011,59 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body" style="display: none;">
-                  <!-- Conversations are loaded here -->
+                
+                 
+                 
                   <div class="direct-chat-messages">
-                    <!-- Message. Default to the left -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-                      </div>
-                      <!-- /.direct-chat-info -->
-                      <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Is this template really for free? That's unbelievable!
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
+               
 
-                    <!-- Message to the right -->
-                    <div class="direct-chat-msg right">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-                      </div>
-                      <!-- /.direct-chat-info -->
-                      <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        You better believe it!
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
+        
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="view/PAGINA_WEB/images/logo_perfil.png" alt="User profile picture">
 
-                    <!-- Message. Default to the left -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                        <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
-                      </div>
-                      <!-- /.direct-chat-info -->
-                      <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        Working with AdminLTE on a great new app! Wanna join?
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-
-                    <!-- Message to the right -->
-                    <div class="direct-chat-msg right">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                        <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
-                      </div>
-                      <!-- /.direct-chat-info -->
-                      <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
-                      <div class="direct-chat-text">
-                        I would love to.
-                      </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
-
-                  </div>
-                  <!--/.direct-chat-messages-->
-
-                  <!-- Contacts are loaded here -->
-                  <div class="direct-chat-contacts">
-                    <ul class="contacts-list">
-                      <li>
-                        <a href="#">
-                          <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Image">
-
-                          <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Count Dracula
-                                  <small class="contacts-list-date pull-right">2/28/2015</small>
-                                </span>
-                            <span class="contacts-list-msg">How have you been? I was...</span>
-                          </div>
-                          <!-- /.contacts-list-info -->
-                        </a>
-                      </li>
-                   
-                    </ul>
-                    <!-- /.contatcts-list -->
-                  </div>
-                  <!-- /.direct-chat-pane -->
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer" style="display: none;">
-                  <form action="#" method="post">
-                    <div class="input-group">
-                      <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                      <span class="input-group-btn">
-                            <button type="button" class="btn btn-warning btn-flat">Enviar</button>
-                          </span>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.box-footer-->
+              <h5 class="profile-username text-center">Ing. Maycol Flores</h5>
+              <p class="text-muted text-center">Desarrollador de Software</p>
+              
+             <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
               </div>
-              <!--/.direct-chat -->
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" id="numero_celular" name="numero_celular">
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+              </div>
+            </div>
+        </div>
+    </div>
+               
+               
+               
+               
+                <div class="box-footer" style="display: none;">
+                   <button type="button" class="btn btn-warning btn-block">Iniciar Chat</button>
+                </div>
+              </div>
             </div>
             
-
-    
+   
      <?php include("view/modulos/links_js.php"); ?> 
     
     
-   
     
+       <script>
+
+
+    $(":input").inputmask();
+    $("#numero_celular").inputmask({"mask": "(999) 999-9999"});
+
+    
+   </script>
+      
     
     <script src="view/PAGINA_WEB/js/jquery.js"></script>
     <script src="view/PAGINA_WEB/js/bootstrap.min.js"></script>
@@ -1137,8 +1077,7 @@
     <script src="view/PAGINA_WEB/js/wow.min.js"></script>
     <script src="view/PAGINA_WEB/js/main.js"></script>
     
-    
-    
+   
     
     
     
