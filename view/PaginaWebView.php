@@ -65,13 +65,13 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home"><b>Inicio</b></a></li>
-                        <li class="scroll"><a href="#features"><b>Our Features</b></a></li>
-                        <li class="scroll"><a href="#services"><b>Service</b></a></li>
+                        <li class="scroll"><a href="#features"><b>Nuestras Caracteristicas</b></a></li>
+                        <li class="scroll"><a href="#services"><b>Servicios</b></a></li>
                         <li class="scroll"><a href="#portfolio"><b>Portfolio</b></a></li>
-                        <li class="scroll"><a href="#about"><b>About Us</b></a></li>
-                        <li class="scroll"><a href="#meet-team"><b>Team</b></a></li>
-                        <li class="scroll"><a href="#pricing"><b>Plans</b></a></li>
-                        <li class="scroll"><a href="#get-in-touch"><b>Contact</b></a></li>                        
+                        <li class="scroll"><a href="#about"><b>Acerca Nuestro</b></a></li>
+                        <li class="scroll"><a href="#meet-team"><b>Equipo</b></a></li>
+                        <li class="scroll"><a href="#pricing"><b>Precios</b></a></li>
+                        <li class="scroll"><a href="#get-in-touch"><b>Contactos</b></a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
