@@ -25,7 +25,7 @@ if (isset ($_GET["id_valor"]))
 
 }
 $image = "";
-$conn  = pg_connect("user=postgres port=5432 password=Programadores2018 dbname=web_capremci host=192.168.1.231");
+$conn  = pg_connect("user=postgres port=5432 password=Programadores2018 dbname=spc host=192.168.1.231");
 if(!$conn)
 {
 	echo  "No se pudo conectar";
@@ -48,7 +48,7 @@ else
 					echo pg_unescape_bytea($raw);
 				}else 
 				{
-					$archivo=$_SERVER['DOCUMENT_ROOT'].'/webcapremci/view/images/'.'nodisponible.jpg';
+					$archivo=$_SERVER['DOCUMENT_ROOT'].'/SPC/view/images/'.'nodisponible.jpg';
 				
 					header("Content-type: image/jpeg");
 					header("Content-length: ".filesize($archivo));
@@ -59,7 +59,7 @@ else
 			
 		}else 
 		{
-			$archivo=$_SERVER['DOCUMENT_ROOT'].'/webcapremci/view/images/'.'nodisponible.jpg';
+			$archivo=$_SERVER['DOCUMENT_ROOT'].'/SPC/view/images/'.'nodisponible.jpg';
 			
 			header("Content-type: image/jpeg");
 			header("Content-length: ".filesize($archivo));

@@ -337,10 +337,14 @@ class EntidadBase{
     
     
     
-    public function registrarSesionParticipe($cedula_participe)
+    public function registrarSesionChat($_id_usuarios_chat, $_ip_usuarios_chat, $_nombre_usuarios_chat, $_correo_usuarios_chat, $_celular_usuarios_chat)
     {
     	
-    	$_SESSION["cedula_participe"]=$cedula_participe;
+        $_SESSION["id_usuarios_chat"]=$_id_usuarios_chat;
+        $_SESSION["ip_usuarios_chat"]=$_ip_usuarios_chat;
+        $_SESSION["nombre_usuarios_chat"]=$_nombre_usuarios_chat;
+        $_SESSION["correo_usuarios_chat"]=$_correo_usuarios_chat;
+        $_SESSION["celular_usuarios_chat"]=$_celular_usuarios_chat;
     	
     	 
     }

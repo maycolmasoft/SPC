@@ -18,7 +18,7 @@
     <link href="view/PAGINA_WEB/css/main.css" rel="stylesheet">
     <link href="view/PAGINA_WEB/css/styles.css" rel="stylesheet">
      
-       <?php include("view/modulos/links_css.php"); ?>
+    <?php include("view/modulos/links_css.php"); ?>
     
     
     
@@ -35,6 +35,11 @@
       z-index: 11;
      }
     
+    html, body, .container{
+      height:100%;
+    }
+    .container>div {
+      height: 100%;
     }
     </style>
        
@@ -121,7 +126,7 @@
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima.</p>
                 </div>
                 <div class="col-sm-3 text-right">
-                    <a class="btn btn-primary btn-lg" href="#">Reprehenderit Qui!</a>
+                    <a class="btn btn-primary btn-lg" href="index.php?controller=Usuarios&action=Loguear">Iniciar Sesión</a>
                 </div>
             </div>
         </div>
@@ -991,81 +996,19 @@
     
     
     
+     <div id="iniciar_chat"></div>
 
 
-    <div class="back-to-top col-lg-3 col-md-4 col-xs-10" >
-              <!-- DIRECT CHAT -->
-              <div class="box box-warning direct-chat direct-chat-warning collapsed-box">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Chat en Linea</h3>
-                  <div class="box-tools pull-right">
-                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">1</span>
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts"
-                            data-widget="chat-pane-toggle">
-                      <i class="fa fa-comments"></i></button>
-                    <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                    </button> -->
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="display: none;">
-                
-                 
-                 
-                  <div class="direct-chat-messages">
-               
 
-        
-            <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="view/PAGINA_WEB/images/logo_perfil.png" alt="User profile picture">
 
-              <h5 class="profile-username text-center">Ing. Maycol Flores</h5>
-              <p class="text-muted text-center">Desarrollador de Software</p>
-              
-             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-              </div>
-              <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email" id="email" name="email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-              </div>
-              
-              <div class="form-group has-feedback">
-                <input type="text" class="form-control" id="numero_celular" name="numero_celular">
-                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-              </div>
-            </div>
-        </div>
-    </div>
-               
-               
-               
-               
-                <div class="box-footer" style="display: none;">
-                   <button type="button" class="btn btn-warning btn-block">Iniciar Chat</button>
-                </div>
-              </div>
-            </div>
-            
-   
+
      <?php include("view/modulos/links_js.php"); ?> 
     
-    
-    
-       <script>
-
-
-    $(":input").inputmask();
-    $("#numero_celular").inputmask({"mask": "(999) 999-9999"});
-
-    
-   </script>
+   
+   
       
     
-    <script src="view/PAGINA_WEB/js/jquery.js"></script>
+    <!-- <script src="view/PAGINA_WEB/js/jquery.js"></script> -->
     <script src="view/PAGINA_WEB/js/bootstrap.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="view/PAGINA_WEB/js/owl.carousel.min.js"></script>
@@ -1076,6 +1019,10 @@
     <script src="view/PAGINA_WEB/js/jquery.inview.min.js"></script>
     <script src="view/PAGINA_WEB/js/wow.min.js"></script>
     <script src="view/PAGINA_WEB/js/main.js"></script>
+    <script src="view/PAGINA_WEB/js/chat.js?11.30"></script>
+    
+    
+    <script src="view/bootstrap/otros/notificaciones/notify.js"></script>
     
    
     

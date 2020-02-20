@@ -6,15 +6,6 @@ class UsuariosController extends ControladorBase{
     }
     
     
-
-
-
-    
-    
-    
-    
-    
-    
     
     public function index10(){
     	 
@@ -112,16 +103,15 @@ class UsuariosController extends ControladorBase{
     		$html.='<th style="text-align: left;  font-size: 12px;">Correo</th>';
     		$html.='<th style="text-align: left;  font-size: 12px;">Rol</th>';
     		$html.='<th style="text-align: left;  font-size: 12px;">Estado</th>';
-    		if($id_rol==1 || $id_rol==43){
+    		if($id_rol==1){
 	    		
     			$html.='<th style="text-align: left;  font-size: 12px;"></th>';
-	    		$html.='<th style="text-align: left;  font-size: 12px;"></th>';
 	    		$html.='<th style="text-align: left;  font-size: 12px;"></th>';
 	    		
     		}else{
     			
     		
-    			$html.='<th style="text-align: left;  font-size: 12px;"></th>';
+    			
     		}
     		$html.='</tr>';
     		$html.='</thead>';
@@ -142,16 +132,14 @@ class UsuariosController extends ControladorBase{
     			$html.='<td style="font-size: 11px;">'.$res->correo_usuarios.'</td>';
     			$html.='<td style="font-size: 11px;">'.$res->nombre_rol.'</td>';
     			$html.='<td style="font-size: 11px;">'.$res->nombre_estado.'</td>';
-    			if($id_rol==1 || $id_rol==43 ){
+    			if($id_rol==1){
     				
     				$html.='<td style="font-size: 18px;"><span class="pull-right"><a href="index.php?controller=Usuarios&action=index&id_usuarios='.$res->id_usuarios.'" class="btn btn-success" style="font-size:65%;"><i class="glyphicon glyphicon-edit"></i></a></span></td>';
     				$html.='<td style="font-size: 18px;"><span class="pull-right"><a href="index.php?controller=Usuarios&action=borrarId&id_usuarios='.$res->id_usuarios.'" class="btn btn-danger" style="font-size:65%;"><i class="glyphicon glyphicon-trash"></i></a></span></td>';
-    				$html.='<td style="font-size: 18px;"><span class="pull-right"><a href="index.php?controller=Usuarios&action=search&cedula='.$res->cedula_usuarios.'" target="_blank" class="btn btn-warning" style="font-size:65%;"><i class="glyphicon glyphicon-eye-open"></i></a></span></td>';
     				
     				
     			}else{
     				
-    				$html.='<td style="font-size: 18px;"><span class="pull-right"><a href="index.php?controller=Usuarios&action=search&cedula='.$res->cedula_usuarios.'" target="_blank" class="btn btn-warning" style="font-size:65%;"><i class="glyphicon glyphicon-eye-open"></i></a></span></td>';
     				
     			}
     			$html.='</tr>';
@@ -231,7 +219,7 @@ public function index(){
 
 			$nombre_controladores = "Usuarios";
 			$id_rol= $_SESSION['id_rol'];
-			$resultPer = $usuarios->getPermisosEditar("controladores.nombre_controladores = '$nombre_controladores' AND permisos_rol.id_rol = '$id_rol' " );
+			$resultPer = $usuarios->getPermisosVer("controladores.nombre_controladores = '$nombre_controladores' AND permisos_rol.id_rol = '$id_rol' " );
 				
 			if (!empty($resultPer))
 			{
@@ -498,7 +486,7 @@ public function index(){
 		    	if ($_FILES['fotografia_usuarios']['tmp_name']!="")
 		    	{
 		    			
-		    		$directorio = $_SERVER['DOCUMENT_ROOT'].'/webcapremci/fotografias_usuarios/';
+		    		$directorio = $_SERVER['DOCUMENT_ROOT'].'/SPC/fotografias_usuarios/';
 		    			
 		    		$nombre = $_FILES['fotografia_usuarios']['name'];
 		    		$tipo = $_FILES['fotografia_usuarios']['type'];
@@ -535,7 +523,7 @@ public function index(){
 		    if ($_FILES['fotografia_usuarios']['tmp_name']!="")
 		    {
 		    
-		    	$directorio = $_SERVER['DOCUMENT_ROOT'].'/webcapremci/fotografias_usuarios/';
+		    	$directorio = $_SERVER['DOCUMENT_ROOT'].'/SPC/fotografias_usuarios/';
 		    
 		    	$nombre = $_FILES['fotografia_usuarios']['name'];
 		    	$tipo = $_FILES['fotografia_usuarios']['type'];
@@ -1059,7 +1047,7 @@ public function index(){
     		$_usuario=$_SESSION['nombre_usuarios'];
     		$_id_rol=$_SESSION['id_rol'];
     		
-    		if($_id_rol==1 || $_id_rol==42 || $_id_rol==43 || $_id_rol==44 || $_id_rol==45){
+    		if($_id_rol==1){
     				
     		
     			$this->view("BienvenidaAdmin",array(
@@ -1139,7 +1127,7 @@ public function index(){
 	    			
     			}	
     			
-    			if($id_estado==1 || $id_estado==2 || $id_estado==3 ){
+    			if($id_estado==1){
     				
     				
     				//obtengo ip
@@ -1169,7 +1157,7 @@ public function index(){
     				 
     				 
     				
-    				if($_id_rol==1 || $_id_rol==42 || $_id_rol==43 || $_id_rol==44 || $_id_rol==45){
+    				if($_id_rol==1 ){
     					
 
     					$this->view("BienvenidaAdmin",array(
@@ -1227,7 +1215,7 @@ public function index(){
     	} 
     	else
     	{
-    		    $error = TRUE;
+    	    $error = FALSE;
     			$mensaje = "Ingrese su cedula y su clave.";
     			
     			
@@ -1377,7 +1365,7 @@ public function index(){
 					if ($_FILES['fotografia_usuarios']['tmp_name']!="")
 					{
 					
-						$directorio = $_SERVER['DOCUMENT_ROOT'].'/webcapremci/fotografias_usuarios/';
+						$directorio = $_SERVER['DOCUMENT_ROOT'].'/SPC/fotografias_usuarios/';
 					
 						$nombre = $_FILES['fotografia_usuarios']['name'];
 						$tipo = $_FILES['fotografia_usuarios']['type'];
@@ -1670,101 +1658,6 @@ public function index(){
 		$out.= "</ul>";
 		return $out;
 	}
-	
-	
-	
-	///////////////////////////////////////////////// informacion de participes ///////
-	
-	
-	
-	public function alerta_actualizacion(){
-	
-		session_start();
-		$i=0;
-		$usuarios = new UsuariosModel();
-	
-		
-	
-		$cedula_usuarios = $_SESSION["cedula_usuarios"];
-	
-		if(!empty($cedula_usuarios)){
-			
-			$columnas = "usuarios.id_usuarios, usuarios.cedula_usuarios, usuarios.nombre_usuarios, usuarios.correo_usuarios";
-			 
-			$tablas   = "public.usuarios";
-			 
-			$where    = " 1=1 AND usuarios.cedula_usuarios='$cedula_usuarios'";
-			 
-			$id       = "usuarios.id_usuarios";
-			
-			
-			
-			$resultSet = $usuarios->getCondiciones($columnas ,$tablas ,$where, $id);
-	
-			$i=count($resultSet);
-				
-			$html="";
-			if($i>0)
-			{
-				if (!empty($resultSet)) {
-					$_id_usuarios=$resultSet[0]->id_usuarios;
-					$_cedula_usuarios=$resultSet[0]->cedula_usuarios;
-					$_nombre_usuarios=$resultSet[0]->nombre_usuarios;
-					$_correo_usuarios=$resultSet[0]->correo_usuarios;
-					
-						
-				}
-	
-
-				$html .= "<div class='col-md-4 col-sm-6 col-xs-12'>";
-				$html .= "<div class='info-box'>";
-				$html .= "<span class='info-box-icon bg-aqua'><img src='view/DevuelveImagenView.php?id_valor=$_id_usuarios&id_nombre=id_usuarios&tabla=usuarios&campo=fotografia_usuarios' width='80' height='80'></span>";
-				$html .= "<div class='info-box-content'>";
-				$html .= "<span class='info-box-text'>Hola <strong>$_nombre_usuarios</strong><br> ayudanos actualizando tu información<br> personal.</span>";
-				$html .= "</div>";
-				$html .= "</div>";
-				$html .= "</div>";
-	
-	
-			}else{
-	
-
-				$html .= "<div class='col-md-4 col-sm-6 col-xs-12'>";
-				$html .= "<div class='info-box'>";
-				$html .= "<span class='info-box-icon bg-aqua'><i class='ion ion-person-add'></i></span>";
-				$html .= "<div class='info-box-content'>";
-				$html .= "<span class='info-box-text'>Debes iniciar sesión.</span>";
-				$html .= "</div>";
-				$html .= "</div>";
-				$html .= "</div>";
-					
-			}
-	
-			echo $html;
-			die();
-	
-		}
-		else{
-	
-	
-	
-			$this->redirect("Usuarios","sesion_caducada");
-	
-			die();
-	
-		}
-	
-	}
-	
-	
-	
-	
-	////////////////////////////////////////REPORTES /////////////////////////////////////////////////////////////
-	
-	
-	
-	
-	///////////////////////////////////////////////////// DESCARGA DE DOCUMENTOS/////////////////////////////
 	
 	
 	
