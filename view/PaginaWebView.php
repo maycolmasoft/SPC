@@ -1001,6 +1001,44 @@
 
 
 
+        <div class="back-to-top col-lg-3 col-md-4 col-xs-10">
+   			     <div class="box box-warning direct-chat direct-chat-warning collapsed-box">
+   			       <div class="box-header with-border">
+   			       <h3 class="box-title">Chat en Linea</h3>
+   			       <div class="box-tools pull-right">
+   			       <span data-toggle="tooltip" title="Nuevos Mensajes" class="badge bg-yellow" id="numero_mensajes"></span>
+   			        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+   			        </button>
+   			        <button type="button" class="btn btn-box-tool"  onclick="Cerrar_Sesion()" id="cancel" style="display: none;"><i class="fa fa-times"></i></button>
+   			        </div>
+   			       </div>
+   			      
+   			       <div class="box-body" style="display: none;">
+   			       
+   			     <div class="direct-chat-messages" id="mensajes">
+   			     
+   			    
+   			      <div  id="mensajes1">
+   			     
+   			    
+   			     
+   			     
+   			</div>
+   			     
+   			</div>
+   			</div>
+
+   			      
+   			      <div class="box-footer" id="footer_chat" style="display: none;" >
+   			    
+   			       </div>
+   			       
+   			       
+   			       
+   			     </div>
+   			   </div>
+
+
 
      <?php include("view/modulos/links_js.php"); ?> 
     
@@ -1019,7 +1057,7 @@
     <script src="view/PAGINA_WEB/js/jquery.inview.min.js"></script>
     <script src="view/PAGINA_WEB/js/wow.min.js"></script>
     <script src="view/PAGINA_WEB/js/main.js"></script>
-    <script src="view/PAGINA_WEB/js/chat.js?11.30"></script>
+    <script src="view/PAGINA_WEB/js/chat.js?17.7"></script>
     
     
     <script src="view/bootstrap/otros/notificaciones/notify.js"></script>

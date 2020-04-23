@@ -2,7 +2,7 @@
 <?php
 
 
-class IniciarController extends ControladorBase{
+class ChatController extends ControladorBase{
 
 	public function __construct() {
 		parent::__construct();
@@ -10,12 +10,50 @@ class IniciarController extends ControladorBase{
 
 
 	public function index(){
+	
+	    
+	    session_start();
+	    if (isset(  $_SESSION['nombre_usuarios']) )
+	    {
+	     
+	        
+	        $usuarios = new UsuariosModel();
+	        
+	        $nombre_controladores = "Chat";
+	        $id_rol= $_SESSION['id_rol'];
+	        $resultPer = $usuarios->getPermisosVer("controladores.nombre_controladores = '$nombre_controladores' AND permisos_rol.id_rol = '$id_rol' " );
+	        
+	        if (!empty($resultPer))
+	        {
+	            
+	            
+	            $this->view("Chat",array(
+	                ""=>""
+	            ));
+	        }
+	        else
+	        {
+	            $this->view("Error",array(
+	                "resultado"=>"No tiene Permisos de Acceso a Chat"
+	                
+	            ));
+	            
+	        }
+	        
+	        
+	    }
+	    else{
+	        
+	        $this->redirect("Usuarios","sesion_caducada");
+	        
+	    }
 				
-				$this->view("PaginaWeb",array(
-						""=>""
-				));
+			
+			
+		
 	
 	}
+	
 	
 	
 	
@@ -84,6 +122,69 @@ class IniciarController extends ControladorBase{
 	
 	
 	
+	
+	public  function CargarChats(){
+	    
+	    
+	    session_start();
+	    $mensajes_chat= new Mensajes_ChatModel();
+	    
+	    $html="";
+	    
+	    if(!isset($_SESSION['id_usuarios'])){
+	        echo 'Session Caducada';
+	        exit();
+	    }
+	    
+	    if(!empty($_SESSION['id_usuarios'])){
+	        
+	        
+	        $columnas="u.id_usuarios_chat, u.nombre_usuarios_chat, u.correo_usuarios_chat, u.celular_usuarios_chat,  ( select to_char(max(creado),'DD-MM-YYYY HH24:MI')
+                       from mensajes_chat aa where aa.id_usuarios_chat_remitente = u.id_usuarios_chat) as fecha";
+	        $tablas="usuarios_chat u
+	        inner join mensajes_chat m on u.id_usuarios_chat=m.id_usuarios_chat_remitente";
+	        $where="m.id_usuarios_chat_remitente not in (1)
+                    group by u.id_usuarios_chat, u.nombre_usuarios_chat, u.correo_usuarios_chat, u.celular_usuarios_chat";
+	        $id="fecha";
+	        
+	        
+	        
+	        $resulset=$mensajes_chat->getCondicionesDesc($columnas, $tablas, $where, $id);
+	        
+	        
+	        
+	        if(!empty($resulset)){
+	            
+	            foreach ($resulset as $res){
+	                
+	                
+	                $_id_usuarios_chat = $res->id_usuarios_chat;
+	                
+	                $resultSetCan=$mensajes_chat->getCantidad("id_usuarios_chat_remitente", "mensajes_chat", "id_usuarios_chat_remitente='$_id_usuarios_chat' AND id_estado=1");
+	                $cant=(int)$resultSetCan[0]->total;
+	                
+	                $html.='<li class="active"><a href="javascript:void(0);"  onclick="Cargar_Mensajes('.$_id_usuarios_chat.')"  ><i class="fa fa-inbox"></i> '.$res->nombre_usuarios_chat.'<span class="label label-warning pull-right">'.$cant.'</span></a></li>';
+	                
+	                
+	                
+	            }
+	            
+	            echo $html;
+	            
+	        }
+	        
+	        
+	    }
+	    
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
 	public  function CargarMensajes(){
 	    
 	    
@@ -92,11 +193,14 @@ class IniciarController extends ControladorBase{
 	    
 	    $html="";
 	    
-	   
+	    if(!isset($_SESSION['id_usuarios'])){
+	        echo 'Session Caducada';
+	        exit();
+	    }
 	    
-	    if(!empty($_SESSION['id_usuarios_chat'])){
+	    if(!empty($_SESSION['id_usuarios'])){
 	        
-	        $_id_usuarios_chat=$_SESSION['id_usuarios_chat'];
+	        $_id_usuarios_chat=$_POST["id_usuarios_chat_remitente"];
 	        
 	        $columnas="m.id_mensajes_chat, m.id_usuarios_chat_remitente,
                     (select u.nombre_usuarios_chat from usuarios_chat u where u.id_usuarios_chat=m.id_usuarios_chat_remitente) as nombre_usuarios_chat_remitente,
@@ -168,34 +272,10 @@ class IniciarController extends ControladorBase{
 	   
 	    session_start();
 	    $mensajes_chat= new Mensajes_ChatModel();
-	    $html="";
 	    
 	    if(!isset($_SESSION['id_usuarios_chat'])){
 	       
-	        
-	        $html.='<div class="box-body box-profile">';
-	        $html.='<img class="profile-user-img img-responsive img-circle" src="view/PAGINA_WEB/images/logo_perfil.png" alt="User profile picture">';
-	        
-	        $html.='<h5 class="profile-username text-center">SPC Solutions</h5>';
-	        $html.='<p class="text-muted text-center">Desarrolladores de Software</p>';
-	        
-	        $html.='<div class="form-group has-feedback">';
-	        $html.='<input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">';
-	        $html.='<span class="glyphicon glyphicon-user form-control-feedback"></span>';
-	        $html.='</div>';
-	        $html.='<div class="form-group has-feedback">';
-	        $html.='<input type="email" class="form-control" placeholder="Email" id="email" name="email">';
-	        $html.='<span class="glyphicon glyphicon-envelope form-control-feedback"></span>';
-	        $html.='</div>';
-	        
-	        $html.='<div class="form-group has-feedback">';
-	        $html.='<input type="number" class="form-control" id="numero_celular" name="numero_celular">';
-	        $html.='<span class="glyphicon glyphicon-phone form-control-feedback"></span>';
-	        $html.='</div>';
-	        $html.='</div>';
-	        
-	        
-	        echo json_encode(array('id'=>"0", 'valor'=>$html));
+	        echo json_encode(array('id'=>"0"));
 	        exit();
 	        
 	    }else{
@@ -216,12 +296,17 @@ class IniciarController extends ControladorBase{
 	      
 	      session_start();
 	      
-	     
+	      if(!isset($_SESSION['id_usuarios'])){
+	          echo 'Session Caducada';
+	          exit();
+	      }
+	      
+	      
 	      $mensajes_chat= new Mensajes_ChatModel();
 	      
 	      
 	      $nuevo_mensaje=(isset($_POST['nuevo_mensaje'])) ? $_POST['nuevo_mensaje']:'';
-	      $_id_usuarios_chat=$_SESSION['id_usuarios_chat'];
+	      $_id_usuarios_chat_receptor=(isset($_POST['id_usuarios_chat_receptor'])) ? $_POST['id_usuarios_chat_receptor']:'';
 	      
 	      if(!empty($nuevo_mensaje) ){
 	          
@@ -229,8 +314,8 @@ class IniciarController extends ControladorBase{
 	              
 	              $funcion = "ins_mensajes_chat";
 	              $parametros = "
-                    '$_id_usuarios_chat',
                     '1',
+                    '$_id_usuarios_chat_receptor',
                     '$nuevo_mensaje'";
 	              $mensajes_chat->setFuncion($funcion);
 	              $mensajes_chat->setParametros($parametros);
@@ -258,6 +343,54 @@ class IniciarController extends ControladorBase{
 	      
 	      
 	
+	      
+	      public function ActualizarLeidos (){
+	          
+	          session_start();
+	          
+	          if(!isset($_SESSION['id_usuarios'])){
+	              echo 'Session Caducada';
+	              exit();
+	          }
+	          
+	          
+	          $mensajes_chat= new Mensajes_ChatModel();
+	          
+	          
+	          $id_usuarios=(isset($_POST['id_usuarios'])) ? $_POST['id_usuarios']:'';
+	          
+	          if(!empty($id_usuarios) ){
+	              
+	              
+	              
+	              
+	              $colval_afi = "id_estado=2";
+	              $tabla_afi = "mensajes_chat";
+	              $where_afi = "id_estado=1 AND id_usuarios_chat_remitente = '$id_usuarios'";
+	              $resultado=$mensajes_chat->editBy($colval_afi, $tabla_afi, $where_afi);
+	              
+	              
+	              
+	              
+	              if((int)$resultado > 0){
+	                  
+	                  $id = $resultado[0];
+	                  
+	                  
+	                  echo json_encode(array('id'=>$id));
+	                  exit();
+	                  
+	               
+	                  
+	                
+	              }
+	             
+	          }
+	          
+	      }
+	      
+	      
+	      
 	
 	      public function CerrarSesion(){
 	          
@@ -274,88 +407,6 @@ class IniciarController extends ControladorBase{
 	      }
 	      
 	      
-	      
-	      
-	      public function ActualizarLeidos (){
-	          
-	          session_start();
-	          
-	          if(!isset($_SESSION['id_usuarios_chat'])){
-	              echo 'Session Caducada';
-	              exit();
-	          }
-	          
-	          
-	          $mensajes_chat= new Mensajes_ChatModel();
-	          
-	          
-	         
-	          
-	          if(isset($_SESSION['id_usuarios_chat'])){
-	              
-	              $id_usuarios=$_SESSION['id_usuarios_chat'];
-	              
-	              
-	              $colval_afi = "id_estado=2";
-	              $tabla_afi = "mensajes_chat";
-	              $where_afi = "id_estado=1 AND id_usuarios_chat_remitente=1 AND id_usuarios_chat_receptor = '$id_usuarios'";
-	              $resultado=$mensajes_chat->editBy($colval_afi, $tabla_afi, $where_afi);
-	              
-	              
-	              
-	              
-	              if((int)$resultado > 0){
-	                  
-	                  $id = $resultado[0];
-	                  
-	                  
-	                  echo json_encode(array('id'=>$id));
-	                  exit();
-	                  
-	                  
-	                  
-	                  
-	              }
-	              
-	          }
-	          
-	      }
-	      
-	      
-	      
 	
-	      public function CargarMensajesSinLeer(){
-	          session_start();
-	          
-	          if(!isset($_SESSION['id_usuarios_chat'])){
-	              echo 0;
-	              
-	              exit();
-	          }
-	          
-	          
-	          $mensajes_chat= new Mensajes_ChatModel();
-	          
-	          
-	          
-	          
-	          if(isset($_SESSION['id_usuarios_chat'])){
-	              
-	              $id_usuarios=$_SESSION['id_usuarios_chat'];
-	              
-	              
-	              $resultSetCan=$mensajes_chat->getCantidad("id_usuarios_chat_remitente", "mensajes_chat", "id_usuarios_chat_remitente=1 AND id_usuarios_chat_receptor='$id_usuarios' AND id_estado=1");
-	              $cant=(int)$resultSetCan[0]->total;
-	              
-	              echo $cant;
-	              
-	              exit();
-	              
-	          }
-	          
-	          
-	      }
-	      
-	      
 }
 ?>
