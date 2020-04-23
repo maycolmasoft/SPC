@@ -70,13 +70,13 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home"><b>Inicio</b></a></li>
-                        <li class="scroll"><a href="#features"><b>Our Features</b></a></li>
-                        <li class="scroll"><a href="#services"><b>Service</b></a></li>
+                        <li class="scroll"><a href="#features"><b>Nuestras Caracteristicas</b></a></li>
+                        <li class="scroll"><a href="#services"><b>Servicios</b></a></li>
                         <li class="scroll"><a href="#portfolio"><b>Portfolio</b></a></li>
-                        <li class="scroll"><a href="#about"><b>About Us</b></a></li>
-                        <li class="scroll"><a href="#meet-team"><b>Team</b></a></li>
-                        <li class="scroll"><a href="#pricing"><b>Plans</b></a></li>
-                        <li class="scroll"><a href="#get-in-touch"><b>Contact</b></a></li>                        
+                        <li class="scroll"><a href="#about"><b>Acerca Nuestro</b></a></li>
+                        <li class="scroll"><a href="#meet-team"><b>Equipo</b></a></li>
+                        <li class="scroll"><a href="#pricing"><b>Precios</b></a></li>
+                        <li class="scroll"><a href="#get-in-touch"><b>Contactos</b></a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -91,9 +91,9 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2><span>Nemo</span> enim ipsam voluptatem quia voluptas</h2>
-                                    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut. </p>
-                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                                    <h2><span>SPC</span> Hace posible la Transformación Digital de tu empresa</h2>
+                                    <p> ¿Quieres construir, mantener o mejorar tu software empresarial? Somos la opción correcta. Hasta ahora hemos desarrollado más de 100 proyectos de software que ayudan a nuestros clientes a lograr sus objetivos de negocio. </p>
+                                    <a class="btn btn-primary btn-lg" href="#">Leer Mas</a>
                                 </div>
                             </div>
                         </div>
@@ -106,9 +106,9 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h2>Cum soluta nobis <span>TEMPORE</span></h2>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore. </p>
-                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                                    <h2>Desarrollo de Software en <span>ECUADOR</span></h2>
+                                    <p>Llega a millones de personas que utilizan dispositivos móviles. Te ofrecemos soluciones profesionales desarrolladas a medida para estos dispositivos, con las que podrás acceder a un mercado en constante crecimiento.</p>
+                                    <a class="btn btn-primary btn-lg" href="#">Leer Mas</a>
                                 </div>
                             </div>
                         </div>
@@ -122,13 +122,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h2>Sed ut perspiciatis unde omnis iste</h2>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima.</p>
+                    <h2>Software personalizado diseñado a la medida.</h2>
+                    <p>En Nobasys utilizamos diferentes tipos de lenguajes de programación para el desarrollo de software, diseñando y desarrollando una gran cantidad de sistemas informáticos como por ejemplo:
+					   Aplicaciones de escritorio con bases de datos internas o con conexión a bases de datos externas, aplicaciones móviles, sistemas de facturación y ventas para todo tipo de negocios, sistemas de gestión, software para puntos de venta, así mismo sistemas administrativos para conjuntos residenciales, sistemas contables, recursos humanos......</p>
                 </div>
                 <div class="col-sm-3 text-right">
+
                     <a class="btn btn-primary btn-lg" href="index.php?controller=Usuarios&action=Loguear">Iniciar Sesión</a>
-                </div>
-            </div>
+         </div>
         </div>
     </section><!--/#cta-->
 
